@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100vh;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  line-height: 1.5 !important;
+  background: #eee;
+}
+
+.page-wrapper {
+  margin: auto;
+  padding: 1rem;
+  max-width: 56rem;
+}
+
+.info-wrapper {
+  margin: auto;
+  padding: 2rem;
+  max-width: 62rem;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.wrapper {
+  flex: 1;
+  margin-top: 4rem;
+}
+
+mat-spinner {
+  margin: 5rem auto;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-toolbar {
+  white-space: normal !important;
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    margin-top: 3.5rem;
+  }
+}

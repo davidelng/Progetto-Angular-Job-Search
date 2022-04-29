@@ -1,0 +1,34 @@
+<div class="info-wrapper">
+  <h2>{{ jobDetails.name }}</h2>
+  <h3>
+    {{ jobDetails.company.name }}
+    <a class="info" routerLink="/company"><mat-icon>info</mat-icon></a>
+  </h3>
+  <!-- <a href="{{ jobDetails.refs.landing_page }}">Landing page</a> -->
+  <p>Posted on:<br />{{ jobDetails.publication_date }}</p>
+  <div [innerHTML]="jobDetails.contents"></div>
+  <div *ngIf="jobDetails.categories">
+    <h4>Categories:</h4>
+    <ul>
+      <li *ngFor="let category of jobDetails.categories">
+        {{ category.name }}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="jobDetails.level">
+    <h4>Levels:</h4>
+    <ul>
+      <li *ngFor="let level of jobDetails.level">{{ level.name }}</li>
+    </ul>
+  </div>
+  <div *ngIf="jobDetails.locations">
+    <ul>
+      <h4>Locations:</h4>
+      <li *ngFor="let location of jobDetails.locations">{{ location.name }}</li>
+    </ul>
+  </div>
+
+  <a class="back" routerLink="/dashboard">
+    <button mat-raised-button color="primary">Go Back</button>
+  </a>
+</div>

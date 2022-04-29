@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-title>{{ jobOffer.name }}</mat-card-title>
+  <mat-card-subtitle>
+    {{ jobOffer.company.name }}
+    <!-- <a routerLink="/company" (click)="showDetails()"
+      ><mat-icon>info</mat-icon></a
+    > -->
+  </mat-card-subtitle>
+  <mat-card-content>
+    <ul *ngFor="let level of jobOffer.levels">
+      <li>{{ level.name }}</li>
+    </ul>
+    <small>{{ jobOffer.publication_date }}</small>
+  </mat-card-content>
+  <mat-card-actions>
+    <a routerLink="/details">
+      <button mat-raised-button color="primary" (click)="showDetails()">
+        Show Details
+      </button>
+    </a>
+  </mat-card-actions>
+</mat-card>

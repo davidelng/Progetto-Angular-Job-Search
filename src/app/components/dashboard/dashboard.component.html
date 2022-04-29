@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">
+  <h1>This page displays Software Engineering job offers from Italy</h1>
+  <p>Browse all of them or apply filters based on your work experience</p>
+  <mat-form-field>
+    <mat-label>Select your level</mat-label>
+    <mat-select
+      disableRipple
+      name="levels"
+      id="level"
+      (selectionChange)="filterSearch($event.value)"
+    >
+      <mat-option value="Internship">Internship</mat-option>
+      <mat-option value="Entry Level">Entry Level</mat-option>
+      <mat-option value="Mid Level">Mid Level</mat-option>
+      <mat-option value="Senior Level">Senior Level</mat-option>
+      <mat-option value="">All</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-toolbar>
+
+<mat-spinner *ngIf="loading"></mat-spinner>
+
+<div class="page-wrapper" *ngIf="!loading">
+  <ul>
+    <li *ngFor="let job of jobs.results">
+      <app-job-card [jobOffer]="job"></app-job-card>
+    </li>
+  </ul>
+
+  <nav class="pages">
+    <ul>
+      <li>
+        <button
+          mat-button
+          [disabled]="this.page === 1"
+          (click)="this.previousPage()"
+        >
+          Previous
+        </button>
+      </li>
+      <li>{{ page }}</li>
+      <li><button mat-button (click)="this.nextPage()">Next</button></li>
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,26 @@
+img {
+  max-width: 30rem;
+  width: 100%;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.description {
+  font-size: 1.5rem;
+}
+
+.navigation {
+  text-align: center;
+}
+
+.navigation a {
+  margin: 1rem;
+}
